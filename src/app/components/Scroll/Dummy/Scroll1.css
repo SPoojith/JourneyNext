@@ -1,0 +1,55 @@
+/* Scroll.css */
+.GrandParent {
+    display: flex;
+    min-height: 100vh;
+    max-height: 100vh;
+    min-width: 100%;
+    background-color: aqua;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+  }
+  
+  .Foster {
+    display: flex;
+    flex-direction: column;
+    width: 380px; /* Fixed width for each Foster */
+    min-height: 100%;
+    position: relative; /* Ensure .ParentScroller is positioned relative to .Foster */
+    margin-right: 10px; /* Space between Foster divs */
+  }
+  
+  .Parent {
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  
+  .Parent::-webkit-scrollbar {
+    display: none; /* Hide default scrollbar */
+  }
+  
+  .child {
+    background-color: yellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    min-height: 20%;
+    border: 2px solid red;
+  }
+  
+  .ParentScroller {
+    position: absolute;
+    background-color: green;
+    width: 100%;
+    height: 30px; /* Maximum height */
+    bottom: 0;
+    cursor: grab; /* Show grab cursor */
+    left: 0; /* Align with the left edge of .Foster */
+    z-index: 1; /* Ensure it’s above the content */
+  }
+  

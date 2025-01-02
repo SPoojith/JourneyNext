@@ -1,0 +1,48 @@
+.BigHome{
+  background-image: url('../../../../public/Assests/z.webp');
+  background-size: 100%;
+  /* background-color: red; */
+}
+.HomeContainer{
+    display: flex;
+    min-height: 100vh;
+    min-width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url("C:\Users\Aparna\Downloads\Backgroud Pic Poojith 2.png"); */
+    /* background-image: url("C:\Users\Aparna\Downloads\latesr.png"); */
+    background-image: url("../../../../public/Assests/pencilsketchadjustelkllj.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: -18%;
+  }
+  
+  .content{
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 204, 255, 0.5); */
+    display: flex;
+    min-width: 25%;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-width: 100px;
+    border-style: solid;
+    border-image-slice: 30% fill;
+    border-image-source: url('../../../../public/Assests/r.png');
+    border-image-width: 100px;
+    }
+  
+  .content span {
+    display: block;
+    margin: 10px 0;
+    color: #333;
+    font-size: xx-large;
+    line-height: 0.8;
+    letter-spacing: 1px;
+  }
+  
+  .special{
+      font-family: cursive;
+      font-weight: 800;
+      font-style: italic;
+  }
