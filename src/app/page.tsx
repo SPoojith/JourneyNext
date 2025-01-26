@@ -1,7 +1,9 @@
 import Home from "./components/Home/Home";
 import Footer from './components/Footer/Footer';
 import Journey from "./components/Journey/Journey";
+import Testimonial from "./components/Testimonial/Testimonial";
 import ParentScroll from "./components/Scroll/ParentSroll";
+
 async function fetchData() {
   const res = await fetch('http://localhost:3000/api/hello'); // Replace with your API endpoint
   if (!res.ok) {
@@ -19,6 +21,7 @@ export default async function App() {
         <>
         <Home/>
         <Journey/>
+        <Testimonial/>
         <ParentScroll/>
         <Footer Data={Data}/>
         </>
