@@ -4,7 +4,6 @@ import ReviewCard from './ReviewCards';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import a from '../../../../public/Assests/Testimonial/Ammi.jpg'
 import { useEffect, useState } from 'react';
 
 interface ReviewCardProps{
@@ -14,9 +13,9 @@ interface ReviewCardProps{
     subheaderLink: string;
     bodyText: string;
 }
-function Testimonial() {
-    const [isClient, setIsClient] = useState(false);
 
+function Testimonial({Testiments} : {Testiments : ReviewCardProps[]}) {
+    const [isClient, setIsClient] = useState(false);
     useEffect(() => {
       setIsClient(true);  // Set this to true after the component has mounted on the client
     }, []);
@@ -39,7 +38,6 @@ function Testimonial() {
               slidesToShow: 3,
               slidesToScroll: 3,
               infinite: true,
-              dots: true
             }
           },
           {
@@ -58,15 +56,8 @@ function Testimonial() {
             }
           }
         ]
-      };
-    const Data : ReviewCardProps ={
-        altText : 'Aparna A',
-        imageSrc: a.src,
-        title :'Aparna A',
-        subheaderLink :'https://www.linkedin.com/in/aparna-a-7b0b3b1b/',
-        bodyText:`Quick grasping skill, keen learner, collaborative, ownership of 
-        deliverables. Team player with moral collaborative conduct.`
-    }
+    };
+
     return ( 
         <div className='TestimonalContainer'>
             <div className='TestimonalHeader'>
@@ -77,12 +68,9 @@ function Testimonial() {
             </div>
             <div style={{paddingLeft:'25px',paddingRight:'25px',height:'90%'}}>
             <Slider {...settings} >
-                <ReviewCard {...Data}></ReviewCard>
-                <ReviewCard {...Data}></ReviewCard>
-                <ReviewCard {...Data}></ReviewCard>
-                <ReviewCard {...Data}></ReviewCard>
-                <ReviewCard {...Data}></ReviewCard>
-                <ReviewCard {...Data}></ReviewCard>
+              {Testiments.map((item,index) => {
+                return <ReviewCard key={index} {...item}></ReviewCard>
+              })}
             </Slider>
             </div>
         </div>

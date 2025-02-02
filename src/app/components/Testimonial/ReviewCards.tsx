@@ -14,6 +14,7 @@ interface ReviewCardProps{
 }
 
 export default function ReviewCard({altText, imageSrc, title, subheaderLink, bodyText}:ReviewCardProps) {
+  const img = "Assests/Testimonial/"+imageSrc;
   return (
     <Card sx={{ margin:'10px'}}>   
       <CardHeader
@@ -21,14 +22,16 @@ export default function ReviewCard({altText, imageSrc, title, subheaderLink, bod
             <Avatar 
               sx={{ width: 56, height: 56 }} 
               alt={altText || ''}
-              src={imageSrc} 
+              src={img} 
             />
           }
         title={title || ''}
         subheader={
+          <>
             <a href={subheaderLink} target="_blank" rel="noopener noreferrer">
               {subheaderLink}
             </a>
+          </>
           }
         sx={{textAlign: 'left'}}
       />
